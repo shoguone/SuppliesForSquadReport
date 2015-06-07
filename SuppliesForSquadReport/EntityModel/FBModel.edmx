@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище FBModel" Provider="FirebirdSql.Data.FirebirdClient" ProviderManifestToken="2.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DO_PRIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="63" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="OTCH" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="LN_SER" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="LN_NUM" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GORODA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KN_P">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="OTCH" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_ROD" Type="varchar" MaxLength="15" Unicode="true" />
+          <Property Name="RVK" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="KUDA" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="KTO" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="IGNORE" Type="varchar" MaxLength="7" Unicode="true" />
+        </EntityType>
+        <EntityType Name="kom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="N_KOM" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="V_VS" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="N_E" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="ST" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="V_CH" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="REZH_KOM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_OTPR" Type="date" />
+          <Property Name="V_SHET" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="VSEGO" Type="int" />
+          <Property Name="VA" Type="int" />
+          <Property Name="MTLB" Type="int" />
+          <Property Name="SUD" Type="int" />
+          <Property Name="Z_PREDS" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="PREDS" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="S_UD" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="N_UD" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="VIDAN" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="D_VID" Type="date" />
+          <Property Name="PRIM" Type="clob" Unicode="true" />
+          <Property Name="SPEC" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="VUS1" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="VUS2" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="VUS3" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="PR" Type="int" />
+          <Property Name="D_PR" Type="date" />
+          <Property Name="RAILROAD" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="V_OKRUG" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="FL_UB" Type="int" />
+          <Property Name="FL_PEREOD" Type="int" />
+          <Property Name="NARAD" Type="int" />
+          <Property Name="GOROD" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="STREET" Type="varchar" MaxLength="255" Unicode="true" />
+          <Property Name="PHONE" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="ZIP" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="ISSIBVO" Type="int" />
+          <Property Name="DOLJNOST" Type="varchar" MaxLength="255" Unicode="true" />
+          <Property Name="FOLLOW_OFICER" Type="smallint" />
+          <Property Name="FOLLOW_PRAPOR" Type="smallint" />
+          <Property Name="FOLLOW_SOLDERS" Type="smallint" />
+          <Property Name="NVESHAT" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="DVESHAT" Type="date" />
+          <Property Name="KOLSUHPAY" Type="smallint" />
+          <Property Name="SYST" Type="smallint" Nullable="false" />
+          <Property Name="POEZD" Type="varchar" MaxLength="6" Unicode="true" />
+          <Property Name="VID_TR" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="T_OTPR" Type="varchar" MaxLength="6" Unicode="true" />
+          <Property Name="N_DOV" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_DOV" Type="date" />
+          <Property Name="FL_DISPLAY" Type="int" Nullable="false" />
+          <Property Name="DOPUSK" Type="int" />
+        </EntityType>
+        <EntityType Name="LOG_P">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="KOD" Type="int" />
+          <Property Name="O_N_KOM" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="N_N_KOM" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="D_IZM" Type="date" />
+          <Property Name="T_IZM" Type="time" />
+        </EntityType>
+        <EntityType Name="NA_UCHETE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NET_N_VB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="KOD" Type="int" />
+          <Property Name="D_LOG" Type="date" />
+        </EntityType>
+        <EntityType Name="NVOZVR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="OTCH" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_ROD" Type="date" />
+          <Property Name="RVK" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="PRICH" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="PRIM" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="D_UBIT" Type="date" />
+          <Property Name="OLD_KOD" Type="int" />
+        </EntityType>
+        <EntityType Name="OBRAZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OPERAT_SPR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DOSTAVLENO" Type="int" />
+          <Property Name="VOZVRASHENO" Type="int" />
+          <Property Name="VOZ_NGM" Type="int" />
+          <Property Name="VOZ_DOPOBSL" Type="int" />
+          <Property Name="VOZ_PNZ" Type="int" />
+          <Property Name="VOZ_VUD" Type="int" />
+          <Property Name="VOZ_SEM_OBS" Type="int" />
+          <Property Name="SOCH" Type="int" />
+          <Property Name="UVOLN" Type="int" />
+          <Property Name="NA_OSP" Type="int" />
+          <Property Name="DOST_V_POSL_SUT" Type="int" />
+          <Property Name="OTPR_V_POSL_SUT" Type="int" />
+          <Property Name="OTPR_VSEGO" Type="int" />
+          <Property Name="O_VVS" Type="int" />
+          <Property Name="O_VDV" Type="int" />
+          <Property Name="O_VMF" Type="int" />
+          <Property Name="O_KV" Type="int" />
+          <Property Name="O_12_GU_MO" Type="int" />
+          <Property Name="O_SIR" Type="int" />
+          <Property Name="O_MCHS" Type="int" />
+          <Property Name="O_ZHDV" Type="int" />
+          <Property Name="O_VV" Type="int" />
+          <Property Name="O_PV" Type="int" />
+          <Property Name="O_PP" Type="int" />
+          <Property Name="O_RVSN" Type="int" />
+          <Property Name="O_SV" Type="int" />
+          <Property Name="O_SV_SIBVO" Type="int" />
+          <Property Name="O_SSSI" Type="int" />
+          <Property Name="O_CP" Type="int" />
+          <Property Name="O_CHSS" Type="int" />
+          <Property Name="D_SPRAV" Type="date" />
+          <Property Name="T_SPRAV" Type="time" />
+          <Property Name="NA_OSP_SUD" Type="int" />
+          <Property Name="OTPR_SUD" Type="int" />
+          <Property Name="SOCH_SUD" Type="int" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Firebird.Firebird.PLAN" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="PLAN">
+          <Property Name="ID" Type="int" />
+          <Property Name="data" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="kom" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="vvs" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="st" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="jd" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="vh" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="vsego" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="esh" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="rej" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="spec" Type="varchar" MaxLength="30" Unicode="true" />
+        </EntityType>-->
+        <EntityType Name="PRIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="OTCH" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_ROD" Type="date" />
+          <Property Name="RVK" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="N_KOM" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="FL_UB" Type="int" />
+          <Property Name="SPEC" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="BRAK" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="SUD" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="OBRAZOV" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="PROF_P" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="NPU" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="REZH_KOM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="GODN" Type="char" MaxLength="1" Unicode="false" />
+          <Property Name="P_PREDN" Type="int" />
+          <Property Name="TDT" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="F_DOP" Type="int" />
+          <Property Name="N_DOP" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="D_DOP" Type="date" />
+          <Property Name="D_PRIB" Type="date" />
+          <Property Name="FL_UV" Type="int" />
+          <Property Name="D_U_UVOL" Type="date" />
+          <Property Name="D_P_UVOL" Type="date" />
+          <Property Name="FL_SOCH" Type="int" />
+          <Property Name="D_U_SOCH" Type="date" />
+          <Property Name="HIST" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="ROST" Type="int" />
+          <Property Name="MASSA" Type="int" />
+          <Property Name="STAT" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="S_V_BIL" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="N_V_BIL" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="PRIM" Type="clob" Unicode="true" />
+          <Property Name="PR_UBIT" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="PRIM_UBIT" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="ZREN" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="R_G_U" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="R_O_G" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="R_OB" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="H" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="POSTO" Type="int" />
+          <Property Name="LN_SER" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="LN_NUM" Type="varchar" MaxLength="12" Unicode="true" />
+          <Property Name="S_PASPORT" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="N_PASPORT" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_PASPORT" Type="date" />
+          <Property Name="IMEET_RAZR" Type="int" />
+          <Property Name="IMEET_REB" Type="int" />
+          <Property Name="ODIN_ROD" Type="int" />
+          <Property Name="BEZ_ROD" Type="int" />
+          <Property Name="DO_PRIZ" Type="varchar" MaxLength="63" Unicode="true" />
+          <Property Name="NA_UCHETE" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="NAVY" Type="smallint" />
+          <Property Name="S_VA" Type="varchar" MaxLength="4" Unicode="true" />
+          <Property Name="N_VA" Type="varchar" MaxLength="6" Unicode="true" />
+          <Property Name="M_ROD" Type="varchar" MaxLength="80" Unicode="true" />
+          <Property Name="KEM_VIDAN" Type="varchar" MaxLength="60" Unicode="true" />
+          <Property Name="TSP" Type="int" />
+        </EntityType>
+        <EntityType Name="RAILROAD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="NAME_S" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="REZH_KOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="F_DOP" Type="int" />
+          <Property Name="TDT" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rezhim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="OTCH" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="RVK" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="KOM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="PRIM" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="D_ROD" Type="date" />
+        </EntityType>
+        <EntityType Name="RVK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="NAME_S" Type="varchar" MaxLength="80" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SEM_POL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="12" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SPEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="12" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SUD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="12" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TABLE1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FAM" Type="varchar" MaxLength="255" Unicode="true" />
+          <Property Name="IM" Type="varchar" MaxLength="255" Unicode="true" />
+          <Property Name="OTH" Type="varchar" MaxLength="255" Unicode="true" />
+          <Property Name="D_ROD" Type="varchar" MaxLength="8" Unicode="true" />
+          <Property Name="RVK" Type="varchar" MaxLength="255" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_OKRUG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="NAME_S" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VID_VS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="12" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VID_VS_FOR_PRIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="12" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZVAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Хранилище FBModelContainer">
+          <EntitySet Name="DO_PRIZ" EntityType="Self.DO_PRIZ" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="DUP" EntityType="Self.DUP" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="GORODA" EntityType="Self.GORODA" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="KN_P" EntityType="Self.KN_P" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="kom" EntityType="Self.kom" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="LOG_P" EntityType="Self.LOG_P" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="NA_UCHETE" EntityType="Self.NA_UCHETE" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="NET_N_VB" EntityType="Self.NET_N_VB" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="NVOZVR" EntityType="Self.NVOZVR" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="OBRAZ" EntityType="Self.OBRAZ" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="OPERAT_SPR" EntityType="Self.OPERAT_SPR" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="PRIZ" EntityType="Self.PRIZ" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="RAILROAD" EntityType="Self.RAILROAD" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="REZH_KOM" EntityType="Self.REZH_KOM" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="rezhim" EntityType="Self.rezhim" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="RVK" EntityType="Self.RVK" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="SEM_POL" EntityType="Self.SEM_POL" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="SPEC" EntityType="Self.SPEC" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="SUD" EntityType="Self.SUD" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="TABLE1" EntityType="Self.TABLE1" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="V_OKRUG" EntityType="Self.V_OKRUG" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="VID_VS" EntityType="Self.VID_VS" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="VID_VS_FOR_PRIC" EntityType="Self.VID_VS_FOR_PRIC" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="ZVAN" EntityType="Self.ZVAN" Schema="Firebird" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DO_PRIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="63" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OTCH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" />
+          <Property Name="LN_SER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LN_NUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GORODA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KN_P">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OTCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_ROD" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RVK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KUDA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="KTO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IGNORE" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="kom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="N_KOM" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="V_VS" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="N_E" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="V_CH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="REZH_KOM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_OTPR" Type="DateTime" />
+          <Property Name="V_SHET" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="VSEGO" Type="Int32" />
+          <Property Name="VA" Type="Int32" />
+          <Property Name="MTLB" Type="Int32" />
+          <Property Name="SUD" Type="Int32" />
+          <Property Name="Z_PREDS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PREDS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="S_UD" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="N_UD" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="VIDAN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="D_VID" Type="DateTime" />
+          <Property Name="PRIM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SPEC" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="VUS1" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="VUS2" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="VUS3" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="PR" Type="Int32" />
+          <Property Name="D_PR" Type="DateTime" />
+          <Property Name="RAILROAD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="V_OKRUG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FL_UB" Type="Int32" />
+          <Property Name="FL_PEREOD" Type="Int32" />
+          <Property Name="NARAD" Type="Int32" />
+          <Property Name="GOROD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ISSIBVO" Type="Int32" />
+          <Property Name="DOLJNOST" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FOLLOW_OFICER" Type="Int16" />
+          <Property Name="FOLLOW_PRAPOR" Type="Int16" />
+          <Property Name="FOLLOW_SOLDERS" Type="Int16" />
+          <Property Name="NVESHAT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DVESHAT" Type="DateTime" />
+          <Property Name="KOLSUHPAY" Type="Int16" />
+          <Property Name="SYST" Type="Int16" Nullable="false" />
+          <Property Name="POEZD" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="VID_TR" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="T_OTPR" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="N_DOV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_DOV" Type="DateTime" />
+          <Property Name="FL_DISPLAY" Type="Int32" Nullable="false" />
+          <Property Name="DOPUSK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LOG_P">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="KOD" Type="Int32" />
+          <Property Name="O_N_KOM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="N_N_KOM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="D_IZM" Type="DateTime" />
+          <Property Name="T_IZM" Type="Time" />
+        </EntityType>
+        <EntityType Name="NA_UCHETE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NET_N_VB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="KOD" Type="Int32" />
+          <Property Name="D_LOG" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="NVOZVR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OTCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_ROD" Type="DateTime" />
+          <Property Name="RVK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PRIM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="D_UBIT" Type="DateTime" />
+          <Property Name="OLD_KOD" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OBRAZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OPERAT_SPR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DOSTAVLENO" Type="Int32" />
+          <Property Name="VOZVRASHENO" Type="Int32" />
+          <Property Name="VOZ_NGM" Type="Int32" />
+          <Property Name="VOZ_DOPOBSL" Type="Int32" />
+          <Property Name="VOZ_PNZ" Type="Int32" />
+          <Property Name="VOZ_VUD" Type="Int32" />
+          <Property Name="VOZ_SEM_OBS" Type="Int32" />
+          <Property Name="SOCH" Type="Int32" />
+          <Property Name="UVOLN" Type="Int32" />
+          <Property Name="NA_OSP" Type="Int32" />
+          <Property Name="DOST_V_POSL_SUT" Type="Int32" />
+          <Property Name="OTPR_V_POSL_SUT" Type="Int32" />
+          <Property Name="OTPR_VSEGO" Type="Int32" />
+          <Property Name="O_VVS" Type="Int32" />
+          <Property Name="O_VDV" Type="Int32" />
+          <Property Name="O_VMF" Type="Int32" />
+          <Property Name="O_KV" Type="Int32" />
+          <Property Name="O_12_GU_MO" Type="Int32" />
+          <Property Name="O_SIR" Type="Int32" />
+          <Property Name="O_MCHS" Type="Int32" />
+          <Property Name="O_ZHDV" Type="Int32" />
+          <Property Name="O_VV" Type="Int32" />
+          <Property Name="O_PV" Type="Int32" />
+          <Property Name="O_PP" Type="Int32" />
+          <Property Name="O_RVSN" Type="Int32" />
+          <Property Name="O_SV" Type="Int32" />
+          <Property Name="O_SV_SIBVO" Type="Int32" />
+          <Property Name="O_SSSI" Type="Int32" />
+          <Property Name="O_CP" Type="Int32" />
+          <Property Name="O_CHSS" Type="Int32" />
+          <Property Name="D_SPRAV" Type="DateTime" />
+          <Property Name="T_SPRAV" Type="Time" />
+          <Property Name="NA_OSP_SUD" Type="Int32" />
+          <Property Name="OTPR_SUD" Type="Int32" />
+          <Property Name="SOCH_SUD" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OTCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_ROD" Type="DateTime" />
+          <Property Name="RVK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="N_KOM" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="FL_UB" Type="Int32" />
+          <Property Name="SPEC" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="BRAK" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="SUD" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="OBRAZOV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROF_P" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NPU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REZH_KOM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GODN" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="P_PREDN" Type="Int32" />
+          <Property Name="TDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="F_DOP" Type="Int32" />
+          <Property Name="N_DOP" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="D_DOP" Type="DateTime" />
+          <Property Name="D_PRIB" Type="DateTime" />
+          <Property Name="FL_UV" Type="Int32" />
+          <Property Name="D_U_UVOL" Type="DateTime" />
+          <Property Name="D_P_UVOL" Type="DateTime" />
+          <Property Name="FL_SOCH" Type="Int32" />
+          <Property Name="D_U_SOCH" Type="DateTime" />
+          <Property Name="HIST" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="ROST" Type="Int32" />
+          <Property Name="MASSA" Type="Int32" />
+          <Property Name="STAT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="S_V_BIL" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="N_V_BIL" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="PRIM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PR_UBIT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIM_UBIT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZREN" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="R_G_U" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="R_O_G" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="R_OB" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="H" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="POSTO" Type="Int32" />
+          <Property Name="LN_SER" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="LN_NUM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="S_PASPORT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="N_PASPORT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_PASPORT" Type="DateTime" />
+          <Property Name="IMEET_RAZR" Type="Int32" />
+          <Property Name="IMEET_REB" Type="Int32" />
+          <Property Name="ODIN_ROD" Type="Int32" />
+          <Property Name="BEZ_ROD" Type="Int32" />
+          <Property Name="DO_PRIZ" Type="String" MaxLength="63" FixedLength="false" Unicode="true" />
+          <Property Name="NA_UCHETE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAVY" Type="Int16" />
+          <Property Name="S_VA" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="N_VA" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="M_ROD" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="KEM_VIDAN" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="TSP" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RAILROAD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_S" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="REZH_KOM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="F_DOP" Type="Int32" />
+          <Property Name="TDT" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rezhim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OTCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RVK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KOM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="D_ROD" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="RVK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_S" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SEM_POL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SPEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SUD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TABLE1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FAM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OTH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="D_ROD" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="RVK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_OKRUG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_S" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VID_VS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VID_VS_FOR_PRIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZVAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DO_PRIZ" EntityType="Self.DO_PRIZ" />
+          <EntitySet Name="DUP" EntityType="Self.DUP" />
+          <EntitySet Name="GORODA" EntityType="Self.GORODA" />
+          <EntitySet Name="KN_P" EntityType="Self.KN_P" />
+          <EntitySet Name="kom" EntityType="Self.kom" />
+          <EntitySet Name="LOG_P" EntityType="Self.LOG_P" />
+          <EntitySet Name="NA_UCHETE" EntityType="Self.NA_UCHETE" />
+          <EntitySet Name="NET_N_VB" EntityType="Self.NET_N_VB" />
+          <EntitySet Name="NVOZVR" EntityType="Self.NVOZVR" />
+          <EntitySet Name="OBRAZ" EntityType="Self.OBRAZ" />
+          <EntitySet Name="OPERAT_SPR" EntityType="Self.OPERAT_SPR" />
+          <EntitySet Name="PRIZ" EntityType="Self.PRIZ" />
+          <EntitySet Name="RAILROAD" EntityType="Self.RAILROAD" />
+          <EntitySet Name="REZH_KOM" EntityType="Self.REZH_KOM" />
+          <EntitySet Name="rezhim" EntityType="Self.rezhim" />
+          <EntitySet Name="RVK" EntityType="Self.RVK" />
+          <EntitySet Name="SEM_POL" EntityType="Self.SEM_POL" />
+          <EntitySet Name="SPEC" EntityType="Self.SPEC" />
+          <EntitySet Name="SUD" EntityType="Self.SUD" />
+          <EntitySet Name="TABLE1" EntityType="Self.TABLE1" />
+          <EntitySet Name="V_OKRUG" EntityType="Self.V_OKRUG" />
+          <EntitySet Name="VID_VS" EntityType="Self.VID_VS" />
+          <EntitySet Name="VID_VS_FOR_PRIC" EntityType="Self.VID_VS_FOR_PRIC" />
+          <EntitySet Name="ZVAN" EntityType="Self.ZVAN" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FBModelContainer" CdmEntityContainer="FBContext">
+          <EntitySetMapping Name="DO_PRIZ">
+            <EntityTypeMapping TypeName="FBModel.DO_PRIZ">
+              <MappingFragment StoreEntitySet="DO_PRIZ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DUP">
+            <EntityTypeMapping TypeName="FBModel.DUP">
+              <MappingFragment StoreEntitySet="DUP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="LN_SER" ColumnName="LN_SER" />
+                <ScalarProperty Name="LN_NUM" ColumnName="LN_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GORODA">
+            <EntityTypeMapping TypeName="FBModel.GORODA">
+              <MappingFragment StoreEntitySet="GORODA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KN_P">
+            <EntityTypeMapping TypeName="FBModel.KN_P">
+              <MappingFragment StoreEntitySet="KN_P">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+                <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+                <ScalarProperty Name="RVK" ColumnName="RVK" />
+                <ScalarProperty Name="KUDA" ColumnName="KUDA" />
+                <ScalarProperty Name="KTO" ColumnName="KTO" />
+                <ScalarProperty Name="IGNORE" ColumnName="IGNORE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kom">
+            <EntityTypeMapping TypeName="FBModel.kom">
+              <MappingFragment StoreEntitySet="kom">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="N_KOM" ColumnName="N_KOM" />
+                <ScalarProperty Name="V_VS" ColumnName="V_VS" />
+                <ScalarProperty Name="N_E" ColumnName="N_E" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+                <ScalarProperty Name="V_CH" ColumnName="V_CH" />
+                <ScalarProperty Name="REZH_KOM" ColumnName="REZH_KOM" />
+                <ScalarProperty Name="D_OTPR" ColumnName="D_OTPR" />
+                <ScalarProperty Name="V_SHET" ColumnName="V_SHET" />
+                <ScalarProperty Name="VSEGO" ColumnName="VSEGO" />
+                <ScalarProperty Name="VA" ColumnName="VA" />
+                <ScalarProperty Name="MTLB" ColumnName="MTLB" />
+                <ScalarProperty Name="SUD" ColumnName="SUD" />
+                <ScalarProperty Name="Z_PREDS" ColumnName="Z_PREDS" />
+                <ScalarProperty Name="PREDS" ColumnName="PREDS" />
+                <ScalarProperty Name="S_UD" ColumnName="S_UD" />
+                <ScalarProperty Name="N_UD" ColumnName="N_UD" />
+                <ScalarProperty Name="VIDAN" ColumnName="VIDAN" />
+                <ScalarProperty Name="D_VID" ColumnName="D_VID" />
+                <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+                <ScalarProperty Name="SPEC" ColumnName="SPEC" />
+                <ScalarProperty Name="VUS1" ColumnName="VUS1" />
+                <ScalarProperty Name="VUS2" ColumnName="VUS2" />
+                <ScalarProperty Name="VUS3" ColumnName="VUS3" />
+                <ScalarProperty Name="PR" ColumnName="PR" />
+                <ScalarProperty Name="D_PR" ColumnName="D_PR" />
+                <ScalarProperty Name="RAILROAD" ColumnName="RAILROAD" />
+                <ScalarProperty Name="V_OKRUG" ColumnName="V_OKRUG" />
+                <ScalarProperty Name="FL_UB" ColumnName="FL_UB" />
+                <ScalarProperty Name="FL_PEREOD" ColumnName="FL_PEREOD" />
+                <ScalarProperty Name="NARAD" ColumnName="NARAD" />
+                <ScalarProperty Name="GOROD" ColumnName="GOROD" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="ISSIBVO" ColumnName="ISSIBVO" />
+                <ScalarProperty Name="DOLJNOST" ColumnName="DOLJNOST" />
+                <ScalarProperty Name="FOLLOW_OFICER" ColumnName="FOLLOW_OFICER" />
+                <ScalarProperty Name="FOLLOW_PRAPOR" ColumnName="FOLLOW_PRAPOR" />
+                <ScalarProperty Name="FOLLOW_SOLDERS" ColumnName="FOLLOW_SOLDERS" />
+                <ScalarProperty Name="NVESHAT" ColumnName="NVESHAT" />
+                <ScalarProperty Name="DVESHAT" ColumnName="DVESHAT" />
+                <ScalarProperty Name="KOLSUHPAY" ColumnName="KOLSUHPAY" />
+                <ScalarProperty Name="SYST" ColumnName="SYST" />
+                <ScalarProperty Name="POEZD" ColumnName="POEZD" />
+                <ScalarProperty Name="VID_TR" ColumnName="VID_TR" />
+                <ScalarProperty Name="T_OTPR" ColumnName="T_OTPR" />
+                <ScalarProperty Name="N_DOV" ColumnName="N_DOV" />
+                <ScalarProperty Name="D_DOV" ColumnName="D_DOV" />
+                <ScalarProperty Name="FL_DISPLAY" ColumnName="FL_DISPLAY" />
+                <ScalarProperty Name="DOPUSK" ColumnName="DOPUSK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_P">
+            <EntityTypeMapping TypeName="FBModel.LOG_P">
+              <MappingFragment StoreEntitySet="LOG_P">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="O_N_KOM" ColumnName="O_N_KOM" />
+                <ScalarProperty Name="N_N_KOM" ColumnName="N_N_KOM" />
+                <ScalarProperty Name="D_IZM" ColumnName="D_IZM" />
+                <ScalarProperty Name="T_IZM" ColumnName="T_IZM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NA_UCHETE">
+            <EntityTypeMapping TypeName="FBModel.NA_UCHETE">
+              <MappingFragment StoreEntitySet="NA_UCHETE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NET_N_VB">
+            <EntityTypeMapping TypeName="FBModel.NET_N_VB">
+              <MappingFragment StoreEntitySet="NET_N_VB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="D_LOG" ColumnName="D_LOG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NVOZVR">
+            <EntityTypeMapping TypeName="FBModel.NVOZVR">
+              <MappingFragment StoreEntitySet="NVOZVR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+                <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+                <ScalarProperty Name="RVK" ColumnName="RVK" />
+                <ScalarProperty Name="PRICH" ColumnName="PRICH" />
+                <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+                <ScalarProperty Name="D_UBIT" ColumnName="D_UBIT" />
+                <ScalarProperty Name="OLD_KOD" ColumnName="OLD_KOD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBRAZ">
+            <EntityTypeMapping TypeName="FBModel.OBRAZ">
+              <MappingFragment StoreEntitySet="OBRAZ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPERAT_SPR">
+            <EntityTypeMapping TypeName="FBModel.OPERAT_SPR">
+              <MappingFragment StoreEntitySet="OPERAT_SPR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DOSTAVLENO" ColumnName="DOSTAVLENO" />
+                <ScalarProperty Name="VOZVRASHENO" ColumnName="VOZVRASHENO" />
+                <ScalarProperty Name="VOZ_NGM" ColumnName="VOZ_NGM" />
+                <ScalarProperty Name="VOZ_DOPOBSL" ColumnName="VOZ_DOPOBSL" />
+                <ScalarProperty Name="VOZ_PNZ" ColumnName="VOZ_PNZ" />
+                <ScalarProperty Name="VOZ_VUD" ColumnName="VOZ_VUD" />
+                <ScalarProperty Name="VOZ_SEM_OBS" ColumnName="VOZ_SEM_OBS" />
+                <ScalarProperty Name="SOCH" ColumnName="SOCH" />
+                <ScalarProperty Name="UVOLN" ColumnName="UVOLN" />
+                <ScalarProperty Name="NA_OSP" ColumnName="NA_OSP" />
+                <ScalarProperty Name="DOST_V_POSL_SUT" ColumnName="DOST_V_POSL_SUT" />
+                <ScalarProperty Name="OTPR_V_POSL_SUT" ColumnName="OTPR_V_POSL_SUT" />
+                <ScalarProperty Name="OTPR_VSEGO" ColumnName="OTPR_VSEGO" />
+                <ScalarProperty Name="O_VVS" ColumnName="O_VVS" />
+                <ScalarProperty Name="O_VDV" ColumnName="O_VDV" />
+                <ScalarProperty Name="O_VMF" ColumnName="O_VMF" />
+                <ScalarProperty Name="O_KV" ColumnName="O_KV" />
+                <ScalarProperty Name="O_12_GU_MO" ColumnName="O_12_GU_MO" />
+                <ScalarProperty Name="O_SIR" ColumnName="O_SIR" />
+                <ScalarProperty Name="O_MCHS" ColumnName="O_MCHS" />
+                <ScalarProperty Name="O_ZHDV" ColumnName="O_ZHDV" />
+                <ScalarProperty Name="O_VV" ColumnName="O_VV" />
+                <ScalarProperty Name="O_PV" ColumnName="O_PV" />
+                <ScalarProperty Name="O_PP" ColumnName="O_PP" />
+                <ScalarProperty Name="O_RVSN" ColumnName="O_RVSN" />
+                <ScalarProperty Name="O_SV" ColumnName="O_SV" />
+                <ScalarProperty Name="O_SV_SIBVO" ColumnName="O_SV_SIBVO" />
+                <ScalarProperty Name="O_SSSI" ColumnName="O_SSSI" />
+                <ScalarProperty Name="O_CP" ColumnName="O_CP" />
+                <ScalarProperty Name="O_CHSS" ColumnName="O_CHSS" />
+                <ScalarProperty Name="D_SPRAV" ColumnName="D_SPRAV" />
+                <ScalarProperty Name="T_SPRAV" ColumnName="T_SPRAV" />
+                <ScalarProperty Name="NA_OSP_SUD" ColumnName="NA_OSP_SUD" />
+                <ScalarProperty Name="OTPR_SUD" ColumnName="OTPR_SUD" />
+                <ScalarProperty Name="SOCH_SUD" ColumnName="SOCH_SUD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRIZ">
+            <EntityTypeMapping TypeName="FBModel.PRIZ">
+              <MappingFragment StoreEntitySet="PRIZ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+                <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+                <ScalarProperty Name="RVK" ColumnName="RVK" />
+                <ScalarProperty Name="N_KOM" ColumnName="N_KOM" />
+                <ScalarProperty Name="FL_UB" ColumnName="FL_UB" />
+                <ScalarProperty Name="SPEC" ColumnName="SPEC" />
+                <ScalarProperty Name="BRAK" ColumnName="BRAK" />
+                <ScalarProperty Name="SUD" ColumnName="SUD" />
+                <ScalarProperty Name="OBRAZOV" ColumnName="OBRAZOV" />
+                <ScalarProperty Name="PROF_P" ColumnName="PROF_P" />
+                <ScalarProperty Name="NPU" ColumnName="NPU" />
+                <ScalarProperty Name="REZH_KOM" ColumnName="REZH_KOM" />
+                <ScalarProperty Name="GODN" ColumnName="GODN" />
+                <ScalarProperty Name="P_PREDN" ColumnName="P_PREDN" />
+                <ScalarProperty Name="TDT" ColumnName="TDT" />
+                <ScalarProperty Name="F_DOP" ColumnName="F_DOP" />
+                <ScalarProperty Name="N_DOP" ColumnName="N_DOP" />
+                <ScalarProperty Name="D_DOP" ColumnName="D_DOP" />
+                <ScalarProperty Name="D_PRIB" ColumnName="D_PRIB" />
+                <ScalarProperty Name="FL_UV" ColumnName="FL_UV" />
+                <ScalarProperty Name="D_U_UVOL" ColumnName="D_U_UVOL" />
+                <ScalarProperty Name="D_P_UVOL" ColumnName="D_P_UVOL" />
+                <ScalarProperty Name="FL_SOCH" ColumnName="FL_SOCH" />
+                <ScalarProperty Name="D_U_SOCH" ColumnName="D_U_SOCH" />
+                <ScalarProperty Name="HIST" ColumnName="HIST" />
+                <ScalarProperty Name="ROST" ColumnName="ROST" />
+                <ScalarProperty Name="MASSA" ColumnName="MASSA" />
+                <ScalarProperty Name="STAT" ColumnName="STAT" />
+                <ScalarProperty Name="S_V_BIL" ColumnName="S_V_BIL" />
+                <ScalarProperty Name="N_V_BIL" ColumnName="N_V_BIL" />
+                <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+                <ScalarProperty Name="PR_UBIT" ColumnName="PR_UBIT" />
+                <ScalarProperty Name="PRIM_UBIT" ColumnName="PRIM_UBIT" />
+                <ScalarProperty Name="ZREN" ColumnName="ZREN" />
+                <ScalarProperty Name="R_G_U" ColumnName="R_G_U" />
+                <ScalarProperty Name="R_O_G" ColumnName="R_O_G" />
+                <ScalarProperty Name="R_OB" ColumnName="R_OB" />
+                <ScalarProperty Name="H" ColumnName="H" />
+                <ScalarProperty Name="POSTO" ColumnName="POSTO" />
+                <ScalarProperty Name="LN_SER" ColumnName="LN_SER" />
+                <ScalarProperty Name="LN_NUM" ColumnName="LN_NUM" />
+                <ScalarProperty Name="S_PASPORT" ColumnName="S_PASPORT" />
+                <ScalarProperty Name="N_PASPORT" ColumnName="N_PASPORT" />
+                <ScalarProperty Name="D_PASPORT" ColumnName="D_PASPORT" />
+                <ScalarProperty Name="IMEET_RAZR" ColumnName="IMEET_RAZR" />
+                <ScalarProperty Name="IMEET_REB" ColumnName="IMEET_REB" />
+                <ScalarProperty Name="ODIN_ROD" ColumnName="ODIN_ROD" />
+                <ScalarProperty Name="BEZ_ROD" ColumnName="BEZ_ROD" />
+                <ScalarProperty Name="DO_PRIZ" ColumnName="DO_PRIZ" />
+                <ScalarProperty Name="NA_UCHETE" ColumnName="NA_UCHETE" />
+                <ScalarProperty Name="NAVY" ColumnName="NAVY" />
+                <ScalarProperty Name="S_VA" ColumnName="S_VA" />
+                <ScalarProperty Name="N_VA" ColumnName="N_VA" />
+                <ScalarProperty Name="M_ROD" ColumnName="M_ROD" />
+                <ScalarProperty Name="KEM_VIDAN" ColumnName="KEM_VIDAN" />
+                <ScalarProperty Name="TSP" ColumnName="TSP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAILROAD">
+            <EntityTypeMapping TypeName="FBModel.RAILROAD">
+              <MappingFragment StoreEntitySet="RAILROAD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NAME_S" ColumnName="NAME_S" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REZH_KOM">
+            <EntityTypeMapping TypeName="FBModel.REZH_KOM">
+              <MappingFragment StoreEntitySet="REZH_KOM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="F_DOP" ColumnName="F_DOP" />
+                <ScalarProperty Name="TDT" ColumnName="TDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rezhim">
+            <EntityTypeMapping TypeName="FBModel.rezhim">
+              <MappingFragment StoreEntitySet="rezhim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+                <ScalarProperty Name="RVK" ColumnName="RVK" />
+                <ScalarProperty Name="KOM" ColumnName="KOM" />
+                <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+                <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RVK">
+            <EntityTypeMapping TypeName="FBModel.RVK">
+              <MappingFragment StoreEntitySet="RVK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NAME_S" ColumnName="NAME_S" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEM_POL">
+            <EntityTypeMapping TypeName="FBModel.SEM_POL">
+              <MappingFragment StoreEntitySet="SEM_POL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPEC">
+            <EntityTypeMapping TypeName="FBModel.SPEC">
+              <MappingFragment StoreEntitySet="SPEC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUD">
+            <EntityTypeMapping TypeName="FBModel.SUD">
+              <MappingFragment StoreEntitySet="SUD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE1">
+            <EntityTypeMapping TypeName="FBModel.TABLE1">
+              <MappingFragment StoreEntitySet="TABLE1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FAM" ColumnName="FAM" />
+                <ScalarProperty Name="IM" ColumnName="IM" />
+                <ScalarProperty Name="OTH" ColumnName="OTH" />
+                <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+                <ScalarProperty Name="RVK" ColumnName="RVK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_OKRUG">
+            <EntityTypeMapping TypeName="FBModel.V_OKRUG">
+              <MappingFragment StoreEntitySet="V_OKRUG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NAME_S" ColumnName="NAME_S" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VID_VS">
+            <EntityTypeMapping TypeName="FBModel.VID_VS">
+              <MappingFragment StoreEntitySet="VID_VS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VID_VS_FOR_PRIC">
+            <EntityTypeMapping TypeName="FBModel.VID_VS_FOR_PRIC">
+              <MappingFragment StoreEntitySet="VID_VS_FOR_PRIC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZVAN">
+            <EntityTypeMapping TypeName="FBModel.ZVAN">
+              <MappingFragment StoreEntitySet="ZVAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
