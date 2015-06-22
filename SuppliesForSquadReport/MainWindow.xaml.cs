@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SuppliesForSquadReport.EntityModel;
+using System.Drawing.Printing;
 
 namespace SuppliesForSquadReport
 {
@@ -26,6 +27,11 @@ namespace SuppliesForSquadReport
         private StiReport myStiReport;
         private string fileName = Properties.Settings.Default.SuppliesReportFilePath;
         private bool choosingFile = Properties.Settings.Default.ChoosingReportFile;
+        private CollectionViewSource squadsViewSource = new CollectionViewSource();
+
+        Predicate<object> filterDeparted = new Predicate<object>(k => ((kom)k).FL_UB == 1);
+        Predicate<object> filterNotDeparted = new Predicate<object>(k => ((kom)k).FL_UB != 1);
+        Predicate<object> filterAll = new Predicate<object>(k => true);
 
         public MainWindow()
         {
@@ -54,12 +60,19 @@ namespace SuppliesForSquadReport
                 var row = (sender as DataGridRow);
                 var item = (row.Item as kom);
 
-                LoadData(item.N_KOM);
-                if (myStiReport != null)
+                try
                 {
-                    myStiReport.Compile();
-                    myStiReport.Render();
-                    myStiReport.Show(true);
+                    LoadData(item.N_KOM);
+                    if (myStiReport != null)
+                    {
+                        myStiReport.Compile();
+                        myStiReport.Render();
+                        myStiReport.Show(true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -101,8 +114,11 @@ namespace SuppliesForSquadReport
             {
                 var squad = ctx.kom
                     .FirstOrDefault(k => k.N_KOM == comNum);
+                if (!squad.KOLSUHPAY.HasValue || squad.KOLSUHPAY.Value < 1)
+                    throw new Exception("Не установлено количество продовольствия для команды " + squad.N_KOM);
                 var recruits = ctx.PRIZ
                     .Where(p => p.N_KOM == comNum)
+                    .OrderBy(p => p.ID)
                     .ToList();
                 Squad = squad;
                 Recruits = recruits;
@@ -153,7 +169,10 @@ namespace SuppliesForSquadReport
                     .ToList();
             }
             //SquadsList.ItemsSource = squadsNumbers;
-            SquadsDataGrid.ItemsSource = squads;
+            squadsViewSource.Source = squads;
+            squadsViewSource.View.Filter = filterNotDeparted;
+            SquadsDataGrid.ItemsSource = squadsViewSource.View;
+
         }
 
         private void OpenFileButton_Click(object sender, RoutedEventArgs e)
@@ -213,6 +232,70 @@ namespace SuppliesForSquadReport
                     myStiReport.Render();
                     myStiReport.Show(true);
                 }
+            }
+        }
+
+        private void DepartialCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (squadsViewSource.Source == null)
+                return;
+
+            CheckBox chbx = (CheckBox)sender;
+            if (!DepartedChBx.IsChecked.Value && !NotDepartedChBx.IsChecked.Value)
+            {
+                chbx.IsChecked ^= true;
+                DepartedChBx.IsChecked ^= true;
+                NotDepartedChBx.IsChecked ^= true;
+            }
+            else if (DepartedChBx.IsChecked.Value && NotDepartedChBx.IsChecked.Value)
+            {
+                squadsViewSource.View.Filter = filterAll;
+                return;
+            }
+
+            if (DepartedChBx.IsChecked.Value)
+            {
+                squadsViewSource.View.Filter = filterDeparted;
+            }
+            else
+            {
+                squadsViewSource.View.Filter = filterNotDeparted;
+            }
+
+        }
+
+        private void PrintButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SquadsDataGrid.SelectedItem != null)
+            {
+                var squad = SquadsDataGrid.SelectedItem as kom;
+
+                LoadData(squad.N_KOM);
+                if (myStiReport != null)
+                {
+                    //StiOptions.Print.UsePrinterSettingsEntirely = true;
+                    //StiOptions.Print.
+                    PrinterSettings ps = new PrinterSettings()
+                    {
+                        Duplex = Duplex.Horizontal
+                        
+                    };
+                    //myStiReport.PrinterSettings.Collate = true;
+                    //myStiReport.PrinterSettings.
+                    myStiReport.Compile();
+                    myStiReport.Render();
+                    myStiReport.Print(false, ps);
+                    //myStiReport.Show(true);
+
+                    //ps.Duplex = Duplex.Vertical;
+                    //ps.Copies = 1;
+                    //ps.Collate = false;
+                    //myStiReport.Print(false, ps);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите команду");
             }
         }
     }

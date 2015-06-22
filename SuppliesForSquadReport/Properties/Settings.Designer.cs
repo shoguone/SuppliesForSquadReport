@@ -25,7 +25,7 @@ namespace SuppliesForSquadReport.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Supply.mrt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\Supply.mrt")]
         public string SuppliesReportFilePath {
             get {
                 return ((string)(this["SuppliesReportFilePath"]));

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SuppliesReportFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Supply.mrt</Value>
+      <Value Profile="(Default)">..\Supply.mrt</Value>
     </Setting>
     <Setting Name="ChoosingReportFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
