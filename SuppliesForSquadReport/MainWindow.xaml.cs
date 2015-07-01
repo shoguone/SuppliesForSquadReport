@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SuppliesForSquadReport.EntityModel;
 using System.Drawing.Printing;
+using SuppliesForSquadReport.Utility;
 
 namespace SuppliesForSquadReport
 {
@@ -50,30 +51,53 @@ namespace SuppliesForSquadReport
 
         void SquadsDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            e.Row.MouseDoubleClick += Row_MouseDoubleClick;
+            e.Row.MouseDoubleClick += Row_Click;
+            e.Row.KeyUp += Row_KeyUp;
         }
 
-        void Row_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        void Row_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (sender != null)
+                {
+                    var row = (sender as DataGridRow);
+                    var item = (row.Item as kom);
+                    ShowReport(item);
+                }
+            }
+            else if ((Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl)) && e.Key == Key.P)
+            {
+                PrintSelectedReport();
+            }
+        }
+
+        void Row_Click(object sender, MouseButtonEventArgs e)
         {
             if (sender != null)
             {
                 var row = (sender as DataGridRow);
                 var item = (row.Item as kom);
+                ShowReport(item);
+            }
+        }
 
-                try
+        void ShowReport(kom item)
+        {
+            try
+            {
+                LoadData(item.N_KOM);
+                if (myStiReport != null)
                 {
-                    LoadData(item.N_KOM);
-                    if (myStiReport != null)
-                    {
-                        myStiReport.Compile();
-                        myStiReport.Render();
-                        myStiReport.Show(true);
-                    }
+                    myStiReport.Compile();
+                    myStiReport.Render();
+                    ReportRotator.Rotate(myStiReport);
+                    myStiReport.Show(true);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -266,6 +290,10 @@ namespace SuppliesForSquadReport
 
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void PrintSelectedReport()
+        {
             if (SquadsDataGrid.SelectedItem != null)
             {
                 var squad = SquadsDataGrid.SelectedItem as kom;
@@ -273,30 +301,51 @@ namespace SuppliesForSquadReport
                 LoadData(squad.N_KOM);
                 if (myStiReport != null)
                 {
-                    //StiOptions.Print.UsePrinterSettingsEntirely = true;
-                    //StiOptions.Print.
-                    PrinterSettings ps = new PrinterSettings()
-                    {
-                        Duplex = Duplex.Horizontal
-                        
-                    };
-                    //myStiReport.PrinterSettings.Collate = true;
-                    //myStiReport.PrinterSettings.
+                    //PageSettings pgs = new PageSettings()
+                    //{
+
+                    //};
+
                     myStiReport.Compile();
                     myStiReport.Render();
-                    myStiReport.Print(false, ps);
-                    //myStiReport.Show(true);
+                    ReportRotator.Rotate(myStiReport);
 
-                    //ps.Duplex = Duplex.Vertical;
-                    //ps.Copies = 1;
-                    //ps.Collate = false;
-                    //myStiReport.Print(false, ps);
+                    int c = myStiReport.RenderedPages.Count;
+                    PrinterSettings ps = new PrinterSettings();
+
+                    if (c % 2 == 0)
+                    {
+                        //двустороняя печать всех
+                        ps.Duplex = Duplex.Horizontal;
+                        ps.Copies = 2;
+                        myStiReport.Print(false, ps);
+                    }
+                    else if (c == 1)
+                    {
+                        //односторонняя печать одной страницы
+                        ps.Duplex = Duplex.Simplex;
+                        ps.Copies = 2;
+                        myStiReport.Print(false, ps);
+                    }
+                    else
+                    {
+                        //двусторонняя печать первых 2n страниц и односторонняя - последней
+                        for (int i = 0; i < 2; i++)
+                        {
+                            ps.Duplex = Duplex.Horizontal;
+                            myStiReport.Print(false, 1, c - 1, 1, ps);
+                            ps.Duplex = Duplex.Simplex;
+                            myStiReport.Print(false, c, c, 1, ps);
+                        }
+                    }
+                    //myStiReport.Show(true);
                 }
             }
             else
             {
                 MessageBox.Show("Выберите команду");
             }
+
         }
     }
 }
